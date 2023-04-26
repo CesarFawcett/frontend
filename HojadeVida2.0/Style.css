@@ -1,12 +1,21 @@
 .columns{
   columns: 2;
-  column-gap: 0em;
+  padding: 5;
 }
 .colum_izq {
+    font-size:0.9em;
+    font-family: Calibri;
     background-color: #999999;
     width: 65%;
+    border:#000000 1px solid;
   
 }
 .colum_der {
+    font-size:1em;
+    font-family: Calibri;
     background-color: #454545;
+    float:right;
+}
+img{
+   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
 }
