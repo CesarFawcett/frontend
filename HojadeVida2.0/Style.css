@@ -1,0 +1,12 @@
+.columns{
+  columns: 2;
+  column-gap: 0em;
+}
+.colum_izq {
+    background-color: #999999;
+    width: 65%;
+  
+}
+.colum_der {
+    background-color: #454545;
+}
