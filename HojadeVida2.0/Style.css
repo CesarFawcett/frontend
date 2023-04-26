@@ -1,20 +1,19 @@
 .columns{
-  columns: 2;
-  padding: 5;
+  display: flex;
 }
 .colum_izq {
+    flex-basis: 20%;
     font-size:0.9em;
     font-family: Calibri;
     background-color: #999999;
-    width: 65%;
     border:#000000 1px solid;
   
 }
 .colum_der {
+    flex-basis: 80%;
     font-size:1em;
     font-family: Calibri;
     background-color: #454545;
-    float:right;
 }
 img{
    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
