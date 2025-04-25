@@ -1,0 +1,117 @@
+:root {
+  --color-bg: #fff;
+  --color-text: #333;
+  --color-primary: #88c057;
+  --color-accent: #23f57e;
+}
+
+[data-theme="dark"] {
+  --color-bg: #1e1e1e;
+  --color-text: #f0f0f0;
+  --color-primary: #6bbf59;
+  --color-accent: #aafc4d;
+}
+
+body {
+  cursor: url('assets/iconos/clic.cur'), auto;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero, .productos, .portfolio, .contacto {
+  padding: 2rem;
+  text-align: center;
+}
+
+.producto-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.producto {
+  background: var(--color-accent);
+  padding: 1rem;
+  border-radius: 8px;
+  color: white;
+  min-width: 150px;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.galeria img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.reloj {
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+footer {
+  background: var(--color-primary);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .nav-links {
+    flex-direction: column;
+  }
+}
+
+.galeria img {
+    width: 100%;
+    border-radius: 8px;
+    transition: filter 0.3s ease;
+  }
+  
+.galeria img:hover {
+    filter: brightness(70%);
+  }
+  
+.producto {
+    background: var(--color-accent);
+    padding: 1rem;
+    border-radius: 8px;
+    color: white;
+    min-width: 150px;
+    transition: filter 0.3s ease; /* Efecto suave */
+  }
+  
+.producto:hover {
+    filter: brightness(85%); /* Oscurece ligeramente al hacer hover */
+  }
+
+  
