@@ -1,0 +1,35 @@
+## Comida Natural - Restaurante
+
+Bienvenido al sitio web de **Comida Natural**, un restaurante dedicado a ofrecer comida saludable, orgánica y deliciosa. 
+Este proyecto incluye una página web con diseño responsive, modo oscuro/claro y una galería de productos.
+
+## 🚀 Características
+
+- **Diseño moderno y responsive**: Adaptable a diferentes tamaños de pantalla.
+- **Modo oscuro/claro**: Cambia entre temas con un solo clic.
+- **Galería interactiva**: Efectos hover en las imágenes de los platos.
+- **Reloj en tiempo real**: Muestra la hora actual en el footer.
+- **Secciones organizadas**: Inicio, Productos, Portfolio y Contacto.
+
+## 🛠️ Tecnologías utilizadas
+
+- HTML5
+- CSS3 (Variables CSS, Grid, Flexbox)
+- JavaScript (Manipulación del DOM, Temporizador)
+
+## 📂 Estructura del proyecto
+
+PaginaProductosNaturales/
+├── index.html # Página principal
+├── css/
+│ └── styles.css # Estilos CSS
+├── js/
+│ └── script.js # Funcionalidades JavaScript
+├── assets/
+│ ├── iconos/ # Íconos y cursores
+│ └── imagenes/ # Imágenes de platos
+└── README.md # Documentación
+
+## 🖼️ Capturas de pantalla
+https://github.com/CesarFawcett/frontend/blob/main/imagenesPantalla/PaginaProductosNaturales1.png
+https://github.com/CesarFawcett/frontend/blob/main/imagenesPantalla/PaginaProductosNaturales2.png
