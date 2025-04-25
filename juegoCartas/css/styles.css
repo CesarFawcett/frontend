@@ -1,0 +1,119 @@
+body {
+  font-family: sans-serif;
+  background: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 10px; 
+}
+  #controls {
+    margin-bottom: 20px;
+  }
+
+  #controls button {
+    margin: 0 10px;
+    padding: 10px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #ffffff, #e0e0e0);
+    color: #333;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+#timer, #score {
+  font-size: 18px;
+  margin: 10px;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  gap: 10px;
+  justify-content: center;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+}
+  
+.card-front {
+  background: #ccc;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background-size: cover;
+}
+
+:root {
+  --bg: #f0f0f0;
+  --text: #000;
+  --card-front: #ccc;
+  --card-back: #fff;
+}
+  
+body.dark-mode {
+  --bg: #121212;
+  --text: #f0f0f0;
+  --card-front: #444;
+  --card-back: #666;
+}
+  
+body {
+  font-family: sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 20px;
+}
+  
+#controls button {
+  transition: background-color 0.3s, filter 0.3s;
+}
+  
+#controls button:hover {
+  filter: brightness(0.85);
+}
+  
+.card.hover-effect:hover {
+  transform: translateY(-5px) scale(1.02);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+  
