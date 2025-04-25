@@ -13,7 +13,7 @@
 }
 
 body {
-  cursor: url('assets/iconos/clic.cur'), auto;
+  cursor: url('../assets/iconos/clic.cur'), auto;
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background-color: var(--color-bg);
