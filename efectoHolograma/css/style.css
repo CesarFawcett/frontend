@@ -1,0 +1,127 @@
+/* style.css */
+body {
+    background-color: #111; /* Fondo oscuro para resaltar el holograma */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Evita barras de scroll si el holograma se mueve */
+  }
+  
+  .hologram-container {
+    perspective: 1000px; /* Necesario para el efecto 3D al mover el ratón */
+    position: relative;
+  }
+  
+  .hologram-content {
+    /* --hologram-color: #00ffff; /* Cian - Color base del holograma */
+    /* --hologram-color: #40cfff; /* Azul claro */
+    --hologram-color: #0ff; /* Cian brillante */
+  
+    position: relative; /* Necesario para los pseudo-elementos */
+    opacity: 0.75; /* Transparencia base */
+    transform-style: preserve-3d; /* Mantiene transformaciones 3D en hijos */
+    transform: rotateY(0deg) rotateX(0deg); /* Rotación inicial (se modificará con JS) */
+    transition: transform 0.1s linear; /* Suaviza el movimiento del ratón */
+  
+    /* Filtros para darle el tono y brillo (especialmente útil para imágenes) */
+    filter:
+      /* Convertir a escala de grises y luego colorear (opcional) */
+      /* grayscale(1) */
+      /* sepia(1) */
+      /* hue-rotate(180deg)  Ajusta este valor para cambiar el tinte */
+  
+      brightness(1.5)   /* Más brillante */
+      contrast(1.2)     /* Más contraste */
+      drop-shadow(0 0 5px var(--hologram-color)) /* Sombra interior suave */
+      drop-shadow(0 0 15px var(--hologram-color)); /* Sombra exterior más amplia (brillo) */
+  
+    /* Animación de parpadeo */
+    animation: flicker 3s infinite alternate;
+  }
+  
+  /* Imagen dentro del contenido (si usas una) */
+  .hologram-content img {
+    display: block; /* Evita espacio extra debajo de la imagen */
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Pseudo-elemento para las líneas de escaneo */
+  .hologram-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 255, 255, 0.15) 2px, /* Líneas finas de color cian semi-transparentes */
+      rgba(0, 255, 255, 0.15) 4px
+    );
+    background-size: 100% 4px; /* Tamaño de la repetición */
+    pointer-events: none; /* No interfiere con el ratón */
+    z-index: 1; /* Por encima del contenido base */
+    animation: scanlines 0.2s linear infinite; /* Animación de las líneas */
+  }
+  
+  /* Pseudo-elemento para un brillo adicional o distorsión (opcional) */
+  .hologram-content::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
+      opacity: 0.5;
+      pointer-events: none;
+      z-index: 2;
+      mix-blend-mode: screen; /* Modo de fusión para interactuar con los colores debajo */
+      animation: pulse 2s infinite alternate;
+  }
+  
+  
+  /* Animación de Parpadeo (Flicker) */
+  @keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+      opacity: 0.75;
+       filter:
+        brightness(1.5)
+        contrast(1.2)
+        drop-shadow(0 0 5px var(--hologram-color))
+        drop-shadow(0 0 15px var(--hologram-color));
+    }
+    20%, 24%, 55% {
+      opacity: 0.6;
+       filter:
+        brightness(1.2)
+        contrast(1.1)
+        drop-shadow(0 0 3px var(--hologram-color))
+        drop-shadow(0 0 10px var(--hologram-color));
+    }
+  }
+  
+  /* Animación de Líneas de Escaneo */
+  @keyframes scanlines {
+    from {
+      background-position-y: 0;
+    }
+    to {
+      background-position-y: 4px; /* Mueve el fondo la altura de una repetición */
+    }
+  }
+  
+  /* Animación de Pulso (Brillo opcional) */
+  @keyframes pulse {
+      from {
+          opacity: 0.3;
+      }
+      to {
+          opacity: 0.6;
+      }
+  }
