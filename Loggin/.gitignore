@@ -1,0 +1,19 @@
+# Common OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE/Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*.un~
+
+# Project specific root files
+logs.txt
+node_modules/
+dist/
+build/
+.env
